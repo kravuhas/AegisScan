@@ -1,151 +1,59 @@
-<!-- BANNER / GIF -->
+&lt;p align="center"&gt;
+  &lt;img src="https://media1.tenor.com/m/ykMmQPdP-7sAAAAC/wrench-watch-dogs-2.gif" width="400px"/&gt;
+&lt;/p&gt;
 
-<p align="center">
-  <img src="https://media1.tenor.com/m/ykMmQPdP-7sAAAAC/wrench-watch-dogs-2.gif" width="500px"/>
-</p>
+&lt;h1 align="center"&gt;🔮 OLHO MALIGNO&lt;/h1&gt;
+&lt;p align="center"&gt;
+  &lt;b&gt;Ethical Vulnerability Scanner&lt;/b&gt;&lt;br&gt;
+  &lt;i&gt;Find vulnerabilities before the bad guys do.&lt;/i&gt;
+&lt;/p&gt;
 
-<h1 align="center">🔮 OLHO MALIGNO</h1>
-<p align="center">
-  <b>Ethical Security Scanner</b><br>
-  <i>Hack the system. Secure the future.</i>
-</p>
+&lt;p align="center"&gt;
+  &lt;img src="https://img.shields.io/badge/Python-3.9+-blue.svg"/&gt;
+  &lt;img src="https://img.shields.io/badge/License-MIT-green.svg"/&gt;
+  &lt;img src="https://img.shields.io/badge/Purpose-Ethical%20Hacking-red.svg"/&gt;
+&lt;/p&gt;
+
+---
+
+## 📋 Sobre
+
+O **Olho Maligno** é um scanner de vulnerabilidades web desenvolvido para **pentesters**, **bug bounty hunters** e **analistas de segurança** que operam em ambientes **explicitamente autorizados**.
+
+&gt; ⚠️ **AVISO LEGAL**
+&gt; 
+&gt; Este software deve ser utilizado **EXCLUSIVAMENTE** em:
+&gt; - Programas de Bug Bounty autorizados
+&gt; - Testes de intrusão (pentest) com contrato assinado
+&gt; - Laboratórios de Cibersegurança controlados
+&gt; 
+&gt; **O uso não autorizado em sistemas de terceiros é CRIME** (Lei Carolina Dieckmann / CFAA / GDPR).
 
 ---
 
 ## 🚀 Funcionalidades
 
-* 🕷️ Web Crawler automático
-* 🔍 Scanner de vulnerabilidades:
-
-  * XSS
-  * SQL Injection
-  * LFI
-  * XXE
-  * CORS misconfig
-  * Headers ausentes
-* 📊 Classificação por severidade
-* 📁 Relatórios em:
-
-  * JSON
-  * TXT
-  * HTML
-* ⚡ Rate limiting
-* 🔒 Safe Mode (não destrutivo)
+| Módulo | Descrição | Status |
+|--------|-----------|--------|
+| 🔍 **Reconnaissance** | Enumeração de endpoints e subdomínios | ✅ |
+| 🕷️ **Web Crawler** | Mapeamento automático da aplicação | ✅ |
+| 💉 **SQL Injection** | Detecção time-based, error-based e union | ✅ |
+| 🎯 **XSS** | Cross-Site Scripting (refletido e DOM) | ✅ |
+| 🚪 **IDOR** | Insecure Direct Object Reference | ✅ |
+| 📁 **LFI/RFI** | Local/Remote File Inclusion | ✅ |
+| ☁️ **SSRF** | Server-Side Request Forgery | ✅ |
+| 🔑 **Exposed Data** | Arquivos sensíveis (.env, backups, .git) | ✅ |
+| 📊 **Relatórios** | JSON, Markdown e HTML profissionais | ✅ |
+| 🛡️ **Safe Mode** | Operação não-destrutiva por padrão | ✅ |
 
 ---
 
 ## 📦 Instalação
 
 ```bash
+# Clone o repositório
 git clone https://github.com/seu-user/olho-maligno.git
 cd olho-maligno
+
+# Instale as dependências
 pip install -r requirements.txt
-```
-
-ou:
-
-```bash
-pip install requests colorama tqdm pyfiglet pyyaml
-```
-
----
-
-## 🧠 Uso
-
-### ▶️ Básico
-
-```bash
-python olho_maligno.py -u https://exemplo.com
-```
-
----
-
-### ⚙️ Avançado
-
-```bash
-python olho_maligno.py -u https://exemplo.com --depth 2 --delay 1 --rate 5 --format html
-```
-
----
-
-### 🔒 Seguro (recomendado)
-
-```bash
-python olho_maligno.py -u https://exemplo.com --scope exemplo.com --delay 2 --rate 2 --format html
-C:\Users\felpz\AppData\Local\Python\pythoncore-3.14-64\python.exe "c:/Users/felpz/Downloads/olho maligno.py" -u https://www.optus.com.au/ --rate 5 --delay 1 --timeout 10
-```
-
----
-
-## 🧩 Parâmetros
-
-| Parâmetro | Descrição     |
-| --------- | ------------- |
-| -u        | URL alvo      |
-| --depth   | Profundidade  |
-| --delay   | Delay         |
-| --rate    | Req/s         |
-| --timeout | Timeout       |
-| --format  | json/txt/html |
-| --output  | Nome saída    |
-| --scope   | Domínio       |
-| --config  | YAML          |
-| --no-safe | Desativa safe |
-
----
-
-## 📊 Relatórios
-
-```
-scan_report_YYYYMMDD_HHMMSS.json
-scan_report_YYYYMMDD_HHMMSS.txt
-scan_report_YYYYMMDD_HHMMSS.html
-```
-
----
-
-## 🧪 Bug Bounty Example
-
-```bash
-python olho_maligno.py -u https://target.com --scope target.com --depth 2 --rate 3 --format html
-```
-
----
-
-## ⚠️ Aviso Legal
-
-> Use apenas com autorização.
-
-* ✔️ Pentest autorizado
-* ✔️ Bug bounty
-* ✔️ Labs
-
-🚫 Nada ilegal.
-
----
-
-## 👨‍💻 Autor
-
-Felipe
-💻 Cybersecurity | Pentest | Red Team
-
----
-
-## ⭐ Contribuição
-
-PRs são bem-vindos!
-
----
-
-## 🧠 Roadmap
-
-* [ ] Multithreading
-* [ ] Subdomain scanner
-* [ ] Integração bug bounty
-* [ ] Dashboard web
-
----
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ff00,100:003300&height=100&section=footer"/>
-</p>
