@@ -156,9 +156,4 @@ MIT — faz o que quiser, mas scan não autorizado é crime e essa licença não
 <div align="center">
 <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="300"/>
 obrigado por visitar!!! volte sempre!!
-https://img.shields.io/badge/visitors-13337-blue?style=plastic
-https://img.shields.io/badge/hits-because%20it's%20the%20vibe-ff69b4?style=plastic
-https://img.shields.io/badge/made%20with-python%20%26%20nostalgia-yellowgreen?style=plastic
-last updated: 09/26/2026 @ 13:40 — [meu diário secreto] [fotos] [links] [guestbook]
-</div>
-```
+
