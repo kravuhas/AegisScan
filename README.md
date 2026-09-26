@@ -1,7 +1,6 @@
 
 <div align="center">
 
-<img src="https://media.tenor.com/ykMmQPdP-7sAAAAC/wrench-watch-dogs-2.gif" width="400"/>
 
 # 🔮 OLHO MALIGNO™
 
