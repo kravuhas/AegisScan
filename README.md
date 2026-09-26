@@ -90,7 +90,6 @@ plain
 
 ## 📥 Download & Instalação
 
-```bash
 # 1. baixa o arquivo (sim, é só UM arquivo)
 wget https://raw.githubusercontent.com/seu-user/olho-maligno/main/olho_maligno.py
 
@@ -163,5 +162,3 @@ https://img.shields.io/badge/made%20with-python%20%26%20nostalgia-yellowgreen?st
 last updated: 09/26/2026 @ 13:40 — [meu diário secreto] [fotos] [links] [guestbook]
 </div>
 ```
-Lembrete rápido: troca seu-user no link do wget pelo seu usuário real do GitHub, e se quiser testar localmente o scanner, o alvo testphp.vulnweb.com (da Acunetix) é um site de propósito vulnerável, ótimo pra validar os módulos de SQLi/XSS.
-Se quiser a versão "corporate séria" pra portfólio também, é só pedir. 🛹
