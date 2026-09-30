@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-╔════════════════════════════════════════════════════════════════════════════╗
-║                                                                            ║
-║                    🔮 OLHO MALIGNO - UNIFIED EDITION                       ║
-║                                                                            ║
-║         Scanner de Vulnerabilidades Web + Utilitários de Rede              ║
-║                                                                            ║
-║  ⚠️  APENAS AMBIENTES AUTORIZADOS - PENTEST | BUG BOUNTY | LABS           ║
-║                                                                            ║
-╚════════════════════════════════════════════════════════════════════════════╝
+======================================================================
+                      A E G I S S C A N  v7.0
+       Web Vulnerability Scanner + Network Utilities
+
+   ONLY AUTHORIZED ENVIRONMENTS - PENTEST | BUG BOUNTY | LABS
+======================================================================
 
 FUNCIONALIDADES:
   ✅ Scanner completo: SQLi, XSS, LFI, IDOR, SSRF, RCE, Dados Sensíveis
@@ -18,14 +15,10 @@ FUNCIONALIDADES:
   ✅ Relatórios: JSON, Markdown, HTML
   ✅ Single-file: Tudo em um arquivo, sem dependências externas
 
-REMOVIDO (não ético/ilegal):
-  ❌ DDoS / IP Bomb
-  ❌ IP Logger / Malware
-  ❌ Qualquer funcionalidade de ataque a terceiros sem autorização
 
 USO:
-  python olho_maligno.py scan https://alvo.com --proxy http://127.0.0.1:8080
-  python olho_maligno.py lookup 8.8.8.8
+  python aegissacan.py scan https://alvo.com --proxy http://127.0.0.1:8080
+  python aegissacan.py lookup 8.8.8.8
 """
 
 from __future__ import annotations
@@ -72,7 +65,7 @@ except ImportError:
 # CONFIGURAÇÕES
 # =============================================================================
 
-__version__ = "7.0.0-UNIFIED"
+__version__ = "7.0.0"
 __author__ = "Cybersecurity Student"
 
 TAMANHO_MAXIMO_RESPOSTA = 5 * 1024 * 1024  # 5 MB
@@ -88,7 +81,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[logging.FileHandler("scan.log", encoding="utf-8"), logging.StreamHandler(sys.stdout)],
 )
-logger = logging.getLogger("olho-maligno")
+logger = logging.getLogger("aegissacan")
 
 
 # =============================================================================
@@ -499,7 +492,7 @@ class Scanner:
     
     def run(self) -> List[Finding]:
         print(f"\n{Fore.CYAN}{'='*70}{Style.RESET_ALL}")
-        print(f"{Fore.CYAN}  🔮 OLHO MALIGNO v{__version__}{Style.RESET_ALL}")
+        print(f"{Fore.CYAN}  AEGISSCAN v{__version__}{Style.RESET_ALL}")
         print(f"{Fore.CYAN}  Alvo: {self.target}{Style.RESET_ALL}")
         print(f"{Fore.CYAN}{'='*70}{Style.RESET_ALL}\n")
         
@@ -567,7 +560,7 @@ class Scanner:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
         data = {
-            "scanner": "Olho Maligno",
+            "scanner": "AegisScan",
             "version": __version__,
             "target": self.target,
             "timestamp": timestamp,
@@ -610,7 +603,7 @@ class Scanner:
                 table{border-collapse:collapse;width:100%} th,td{border:1px solid #ddd;padding:12px;text-align:left}
                 th{background:#f5f5f5}
                 </style></head><body>""")
-                f.write(f"<h1>🔮 Relatório Olho Maligno</h1>")
+                f.write(f"<h1>AegisScan - Relatório de Vulnerabilidades</h1>")
                 f.write(f"<p><b>Alvo:</b> {self.target}<br><b>Data:</b> {timestamp}</p>")
                 f.write(f"<h2>Resumo: {len(self.findings)} findings</h2><table>")
                 f.write("<tr><th>Severidade</th><th>Título</th><th>URL</th><th>CVSS</th></tr>")
@@ -662,15 +655,15 @@ def ip_lookup(ip_address: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="🔮 Olho Maligno - Scanner de Vulnerabilidades Web",
+        description="AegisScan - Web Vulnerability Scanner",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 EXEMPLOS:
-  Scan básico:           python olho_maligno.py scan https://alvo.com
-  Scan com proxy:        python olho_maligno.py scan https://alvo.com --proxy http://127.0.0.1:8080
-  Scan lento (safe):     python olho_maligno.py scan https://alvo.com --delay 2
-  Relatório HTML:        python olho_maligno.py scan https://alvo.com --format html
-  IP Lookup:             python olho_maligno.py lookup 8.8.8.8
+  Scan básico:           python aegissacan.py scan https://alvo.com
+  Scan com proxy:        python aegissacan.py scan https://alvo.com --proxy http://127.0.0.1:8080
+  Scan lento (safe):     python aegissacan.py scan https://alvo.com --delay 2
+  Relatório HTML:        python aegissacan.py scan https://alvo.com --format html
+  IP Lookup:             python aegissacan.py lookup 8.8.8.8
         """,
     )
     
